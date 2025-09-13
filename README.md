@@ -1,97 +1,121 @@
-![Group 23](https://github.com/user-attachments/assets/4e84251a-27b0-462b-bd5e-fb0bcadc4694)
+# SkyLearn - Django LMS
 
-### The world’s most high-end designed, lightweight, and feature-rich learning management system.
+SkyLearn is a modern, full-featured **Learning Management System (LMS)** built with **Django**. It allows instructors to create courses, manage students, and track progress, while students can enroll in courses, access learning materials, and track their own progress.
 
-# SkyLearn: Open source learning management system
+---
 
-Learning management system using Django web framework. You might want to develop a learning management system (also known as a school/college management system) for a school/college organization, or simply for the purpose of learning the tech stack and enhancing your portfolio. In either case, this project would be a great way to get started. The aim is to create the world's most lightweight yet feature-rich learning management system. However, this is not possible without your support, so please give it a star ⭐️.
+## 🏆 Features
 
-_Documentation is under development_
+* **User Authentication:** Sign up, login, password reset, and profile management.
+* **Courses Management:** Create, edit, and delete courses (admin/instructor side).
+* **Student Dashboard:** View enrolled courses, progress, and upcoming assignments.
+* **Email Notifications:** Sends emails for registration, updates, and reminders (Gmail SMTP).
+* **Responsive UI:** Fully responsive design for desktop and mobile.
+* **Environment Configuration:** Easy `.env` setup for sensitive credentials.
 
-Let's enhance the project by contributing! 👩‍💻👩‍💻
+---
 
-<img width="1440" alt="screenshot" src="https://github.com/user-attachments/assets/08644f49-6ae0-4695-86cc-afe331c6f61a">
+## 🚀 Tech Stack
 
-## Current features
+* **Backend:** Django, Python
+* **Frontend:** HTML, CSS, JavaScript, Bootstrap
+* **Database:** SQLite (default), can be switched to PostgreSQL
+* **Email:** Gmail SMTP / Console backend for development
+* **Version Control:** Git & GitHub
 
-- Dashboard: School demographics and analytics. Restricted to only admins
-- News And Events: All users can access this page
-- Admin manages students(Add, Update, Delete)
-- Admin manages lecturers(Add, Update, Delete)
-- Students can Add and Drop courses
-- Lecturers submit students' scores: _Attendance, Mid exam, Final exam, assignment_
-- The system calculates students' _Total, average, point, and grades automatically_
-- Grade comment for each student with a **pass**, **fail**, or **pass with a warning**
-- Assessment result page for students
-- Grade result page for students
-- Session/year and semester management
-- Assessments and grades will be grouped by semester
-- Upload video and documentation for each course
-- PDF generator for students' registration slip and grade result
-- Page access restriction
-- Storing of quiz results under each user
-- Question order randomization
-- Previous quiz scores can be viewed on the category page
-- Correct answers can be shown after each question or all at once at the end
-- Logged-in users can return to an incomplete quiz to finish it and non-logged-in users can complete a quiz if their session persists
-- The quiz can be limited to one attempt per user
-- Questions can be given a category
-- Success rate for each category can be monitored on a progress page
-- Explanation for each question result can be given
-- Pass marks can be set
-- Multiple choice question type
-- True/False question type
-- Essay question type................._Coming soon_
-- Custom message displayed for those that pass or fail a quiz
-- Custom permission (view_sittings) added, allowing users with that permission to view quiz results from users
-- A marking page which lists completed quizzes, can be filtered by quiz or user, and is used to mark essay questions
+---
 
-# Quick note for future contributors
+## ⚡ Installation & Setup
 
-If you would like to contribute, simply begin by implementing one from the list in the `TODO.md` file.
+1. **Clone the repository:**
 
-# Requirements:
+   ```bash
+   git clone https://github.com/Siddscell/SkyLearn.git
+   cd SkyLearn
+   ```
 
-> The following program(s) are required to run the project
+2. **Create virtual environment:**
 
-- [Python3.8+](https://www.python.org/downloads/)
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate   # Windows
+   source venv/bin/activate # macOS/Linux
+   ```
 
-# Installation
+3. **Install dependencies:**
 
-- Clone the repo with
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```bash
-git clone https://github.com/SkyCascade/SkyLearn.git
+4. **Setup environment variables:**
+
+   * Copy `.env.example` to `.env` and fill in your credentials:
+
+     ```bash
+     cp .env.example .env   # macOS/Linux
+     copy .env.example .env # Windows
+     ```
+
+5. **Apply migrations:**
+
+   ```bash
+   python manage.py migrate
+   ```
+
+6. **Run the development server:**
+
+   ```bash
+   python manage.py runserver
+   ```
+
+7. Open your browser at `http://127.0.0.1:8000/` to see SkyLearn in action.
+
+---
+
+## 📂 Directory Structure
+
+```
+SkyLearn/
+├─ manage.py
+├─ SkyLearn/
+│  ├─ settings.py
+│  ├─ urls.py
+│  └─ wsgi.py
+├─ apps/
+│  └─ ...
+├─ templates/
+├─ static/
+├─ .env
+└─ requirements.txt
 ```
 
-- Create and activate a python virtual environment
+---
 
-```bash
-pip install -r requirements.txt
-```
+## ⚙️ Configuration
 
-- Create `.env` file inside the root directory
+* **Email:** Set up Gmail SMTP in `.env` for production email sending.
+* **Debug Mode:** `DEBUG=True` for development, `False` for production.
+* **Secret Key:** Use a strong, unique `SECRET_KEY` in `.env`.
 
-- Copy and paste everything in the `.env.example` file into the `.env` file. Don't forget to customize the variable values
+---
 
-```bash
-python manage.py migrate
-```
+## 💻 Usage
 
-```bash
-python manage.py createsuperuser
-```
+* **Admin Panel:** `http://127.0.0.1:8000/admin/`
+* **Instructor:** Create courses and manage content.
+* **Student:** Enroll in courses and track progress.
 
-```bash
-python manage.py runserver
-```
+---
 
-Last but not least, go to this address http://127.0.0.1:8000
+## 📝 License
 
-#### _Check [this page](https://adilmohak.github.io/dj-lms-starter/) for more insight and support._
+This project is **open-source** and available under the MIT License.
 
-# References
+---
 
-- Quiz part: https://github.com/tomwalker/django_quiz
+## 📫 Contact
 
-#### Show your support by ⭐️ this project!
+**Author:** Siddhant Patil
+**Email:** [siddhantpatil560@gmail.com](mailto:youremail@example.com)
+**GitHub:** [Siddscell](https://github.com/Siddscell)
